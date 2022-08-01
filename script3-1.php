@@ -33,13 +33,9 @@ print_r($arr2);
 // без использования $key
 
 foreach ($arr1 as $value1) {
-    foreach ($arr2 as $value2) {
 
-    $arrMultiply[] = $value1 * $value2;
-    array_shift($arr2);
-    break;
-
-    } 
+    $arrMultiply[] = $value1 * current( $arr2 );
+    next( $arr2 );
 }
 
 print_r($arrMultiply);

@@ -30,14 +30,11 @@ $rand_keys1 = array_rand($arr1, $n);
 $rand_keys2 = array_rand($arr2, $n);
 
 foreach ($rand_keys1 as $value1) {
-    foreach ($rand_keys2 as $value2) {
 
-    $arrString[] = $arr2[ $value2 ] . " " . $arr1[ $value1 ];
-    array_shift( $arr2 );
-    break;
-
-    } 
+    $arrString[] = array_shift( $arr2 ) . " " . $arr1[ $value1 ]; 
+    
 }
+
 
 $string = implode(", ", array_slice($arrString, 0, ($n - 1))) . " и " . implode(array_slice($arrString, -1, 1));
 
