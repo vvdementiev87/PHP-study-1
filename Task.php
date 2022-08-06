@@ -5,11 +5,12 @@ require_once 'User.php';
 class Task {
     private User $user;
     private string $description;
-    private $dateCreated;
-    private $dateUpdated;
-    private $dateDone;
+    private DateTime $dateCreated;
+    private DateTime $dateUpdated;
+    private DateTime $dateDone;
     private int $priotity;
     private bool $isDone;
+    private array $comments = [];
     
     function __construct($user)
     {
@@ -101,4 +102,18 @@ class Task {
         $this->dateUpdated = new dateTime();
         return $this;
     }
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    public function addComments($comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+
 };
