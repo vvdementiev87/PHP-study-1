@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<a href="/">Главная</a>
 <h1>Гостевая книга</h1>
 </body>
 </html>
