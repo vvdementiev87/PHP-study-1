@@ -1,8 +1,17 @@
 <?php
 require_once 'model/Task.php';
 require_once 'model/TaskProvider.php';
+require_once 'model/User.php';
 
 session_start();
+
+$username = null;
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username']->getUsername();
+} else {
+    header("Location: index.php");
+    die();
+}
 
 $tasks = [];
 
