@@ -5,4 +5,5 @@ return [
     'security' => 'controller/SecurityController.php',
     'tasks' => 'controller/TasksController.php',
     'guest' => 'controller/GuestController.php',
+    'registration' => 'controller/RegistrationController.php',
 ];

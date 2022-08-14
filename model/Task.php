@@ -3,71 +3,49 @@
 
 class Task {
     private string $description;
-    private DateTime $dateCreated;
-    private DateTime $dateUpdated;
-    private DateTime $dateDone;
+    private int $userId;
+    private int $taskId;
     private bool $isDone;
     
-    function __construct($description)
+    function __construct($description, $userId, $taskId)
     {
        $this->description = $description;
+       $this->userId = $userId;
+       $this->taskId = $taskId;
        $this->isDone = false;
-       $this->setDateCreated();
     }
 
-    public function markAsDone()
+    public function markAsDone(): void
     {
         $this->isDone = true;
-        $this->setDateUpdated();
-        $this->setDateDone();
     }
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
 
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
-        $this->setDateUpdated();
         return $this;
     }
 
-    public function getDateCreated()
-    {
-        return $this->dateCreated;
-    }
 
-    public function setDateCreated()
-    {
-        $this->dateCreated = new DateTime();
-        return $this;
-    }
-
-    public function getDateDone()
-    {
-        return $this->dateDone;
-    }
-
-    public function setDateDone()
-    {
-        $this->dateDone = new DateTime();
-        return $this;
-    }
-
-    public function getIsDone()
+    public function getIsDone(): bool
     {
         return $this->isDone;
     }
     
-    public function getDateUpdated()
+   
+
+    public function getUserId(): int
     {
-        return $this->dateUpdated;
+        return $this->userId;
     }
 
-    public function setDateUpdated()
+    public function getTaskId()
     {
-        $this->dateUpdated = new dateTime();
-        return $this;
+        return $this->taskId;
     }
+
 };
